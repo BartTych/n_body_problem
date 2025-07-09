@@ -44,5 +44,5 @@ def project_to_1d_along_line(xs, ys):
         vec_y = y - base_y
         scalar = vec_x * dir_x + vec_y * dir_y  # Dot product
         scalars.append(scalar)
-
+    
     return scalars, m, base_x, base_y

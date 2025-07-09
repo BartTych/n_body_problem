@@ -17,7 +17,8 @@ def cal_pos_with_infinity_principle(xs, ys, dts):
     hiperbola = fit.fit_shifted_inverse_with_offset(projections, dts)
     
     print(hiperbola)    
-
+    
+    
     # debugging plotting of fitting..
     plt.plot(projections,dts)
     plt.scatter(projections, [hiperbola[0] / (x - hiperbola[1]) + hiperbola[2] for x in projections], label='Fitted Curve', color='red')

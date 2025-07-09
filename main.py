@@ -8,12 +8,12 @@ import pickle
 
 length = 40_000.0 #[s]
 
-steps_list = [int(20_000*7 + 30000*n) for n in range(30)]
+steps_list = [int(20_000*7 + 30000*n) for n in range(55)]
 dt_list = [length / steps for steps in steps_list]
 
 result = []    
-for steps,dt in zip(steps_list,dt_list):
-    
+for i, (steps, dt) in enumerate(zip(steps_list,dt_list)):
+    print(f"iteracjai {i}")
     n_bodies = 3
     positions = np.array([[0, 0], [1e7, 0], [0, 1e7]], dtype = float)
     velocities = np.array([[50, 50], [-30, 350], [-100, 0]], dtype = float)
@@ -21,7 +21,6 @@ for steps,dt in zip(steps_list,dt_list):
     
     print(f"ilosc krokow: {steps}")
     result.append(simple_simulation.simulate_return_end_only(positions, velocities, masses, dt = dt, steps = steps))
-
 
 result = np.array(result)
 for n in range(3):

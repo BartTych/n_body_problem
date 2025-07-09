@@ -12,7 +12,6 @@ positions = np.array([[0, 0], [1e7, 0], [0, 1e7]], dtype = float)
 velocities = np.array([[50, 50], [-30, 350], [-100, 0]], dtype = float)
 masses = np.array([5e21, 1e22, 1e22])
 
-
 steps = int(20_000*7 + 30000*30)
 dt = length / steps 
 
